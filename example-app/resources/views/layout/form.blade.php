@@ -1,20 +1,18 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}"">
-<head>
-  <meta charset=" utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AdminLTE 3 | DataTables</title>
+<html lang="en">
 
-<!-- Google Font: Source Sans Pro -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-<!-- Font Awesome -->
-<link rel="stylesheet" href="{{ asset('adminlte/plugins/fontawesome-free/css/all.min.css')}}">
-<!-- DataTables -->
-<link rel="stylesheet" href="{{ asset('adminlte/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css')}}">
-<link rel="stylesheet" href="{{ asset('adminlte/plugins/datatables-responsive/css/responsive.bootstrap4.min.css')}}">
-<link rel="stylesheet" href="{{ asset('adminlte/plugins/datatables-buttons/css/buttons.bootstrap4.min.css')}}">
-<!-- Theme style -->
-<link rel="stylesheet" href="{{ asset('adminlte/dist/css/adminlte.min.css')}}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AdminLTE 3 | Validation Form</title>
+
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="{{ asset('adminlte/plugins/fontawesome-free/css/all.min.css')}}">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="{{ asset('adminlte/dist/css/adminlte.min.css')}}">
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -50,7 +48,7 @@
                 <!-- Sidebar user (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
-                        <img src="{{asset('img/FharazLogo.png')}}" class="img-circle elevation-2" alt="User Image">
+                        <img src="{{asset('img/karane.jpg')}}" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
                         <a href="#" class="d-block">Fharaz Al Azizya</a>
@@ -77,18 +75,18 @@
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                         <li class="nav-item">
-                            <a href="/dashboard" class="nav-link">
+                            <a href="/" class="nav-link">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
-                                    Dashboard
+                                    Table
                                 </p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/" class="nav-link">
+                            <a href="/dataTable" class="nav-link">
                                 <i class="nav-icon fas fa-table"></i>
                                 <p>
-                                    Table
+                                    Data Table
                                 </p>
                             </a>
                         </li>
@@ -114,12 +112,12 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1>DataTables</h1>
+                            <h1>Create</h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">DataTables</li>
+                                <li class="breadcrumb-item active">Create</li>
                             </ol>
                         </div>
                     </div>
@@ -130,18 +128,36 @@
             <section class="content">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-12">
-                            @yield('content')
+                        <!-- left column -->
+                        <div class="col-md-12">
+                            <!-- jquery validation -->
+                            <div class="card card-primary">
+                                <!-- /.card-header -->
+                                <!-- form start -->
+                                @yield('content')
+                            </div>
+                            <!-- /.card -->
                         </div>
-                        <!-- /.col -->
+                        <!--/.col (left) -->
+                        <!-- right column -->
+                        <div class="col-md-6">
+
+                        </div>
+                        <!--/.col (right) -->
                     </div>
                     <!-- /.row -->
-                </div>
-                <!-- /.container-fluid -->
+                </div><!-- /.container-fluid -->
             </section>
             <!-- /.content -->
         </div>
         <!-- /.content-wrapper -->
+        <footer class="main-footer">
+            <div class="float-right d-none d-sm-block">
+                <b>Version</b> 3.2.0
+            </div>
+            <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights
+            reserved.
+        </footer>
 
         <!-- Control Sidebar -->
         <aside class="control-sidebar control-sidebar-dark">
@@ -152,25 +168,15 @@
     <!-- ./wrapper -->
 
     <!-- jQuery -->
-    <script src="{{asset('adminlte/plugins/jquery/jquery.min.js')}}"></script>
+    <script src="{{ asset('adminlte/plugins/jquery/jquery.min.js')}}"></script>
     <!-- Bootstrap 4 -->
-    <script src="{{asset('adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-    <!-- DataTables  & Plugins -->
-    <script src="{{asset('adminlte/plugins/datatables-responsive/js/dataTables.responsive.min.js')}}"></script>
-    <script src="{{asset('adminlte/plugins/datatables-responsive/js/responsive.bootstrap4.min.js')}}"></script>
-    <script src="{{asset('adminlte/plugins/datatables-buttons/js/dataTables.buttons.min.js')}}"></script>
-    <script src="{{asset('adminlte/plugins/datatables-buttons/js/buttons.bootstrap4.min.js')}}"></script>
-    <script src="{{asset('adminlte/plugins/jszip/jszip.min.js')}}"></script>
-    <script src="{{asset('adminlte/plugins/pdfmake/pdfmake.min.js')}}"></script>
-    <script src="{{asset('')}}adminlte/plugins/pdfmake/vfs_fonts.js"></script>
-    <script src="{{asset('adminlte/plugins/datatables-buttons/js/buttons.html5.min.js')}}"></script>
-    <script src="{{asset('adminlte/plugins/datatables-buttons/js/buttons.print.min.js')}}"></script>
-    <script src="{{asset('adminlte/plugins/datatables-buttons/js/buttons.colVis.min.js')}}"></script>
+    <script src="{{ asset('adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+    <!-- jquery-validation -->
+    <script src="{{ asset('adminlte/plugins/jquery-validation/jquery.validate.min.js')}}"></script>
+    <script src="{{ asset('adminlte/plugins/jquery-validation/additional-methods.min.js')}}"></script>
     <!-- AdminLTE App -->
-    <script src="{{asset('adminlte/dist/js/adminlte.min.js')}}"></script>
+    <script src="{{ asset('adminlte/dist/js/adminlte.min.js')}}"></script>
     <!-- AdminLTE for demo purposes -->
-    <!-- Page specific script -->
-    @stack('script')
 </body>
 
 </html>
